@@ -31,9 +31,7 @@
 #include "pca9685.h"
 #include <wiringPi.h>
 
-
 #define PIN_BASE 300
-
 
 int main(void)
 {
