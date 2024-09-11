@@ -38,5 +38,5 @@
 - [ ] 参考[Simple Guide to the Raspberry Pi GPIO Header - Raspberry Pi Spy](https://www.raspberrypi-spy.co.uk/2012/06/simple-guide-to-the-rpi-gpio-header-and-pins/)确认当前配置的每个部件在树莓派中GPIO的连接方式，填写上面的表格
 - [ ] 使用gpiozero和wiringpi改造如下程序
   - [X] buzzer
-  - [ ] button
+  - [X] button
   - [ ] basic movement
