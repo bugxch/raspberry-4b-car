@@ -2,7 +2,9 @@
 
 主要目的是基于树莓派4B，将小车的python2到python3迁移改造，实现各种功能
 
-## 部件配置
+## 基础配置
+
+### 硬件配置
 
 下面是树莓派的GPIO引脚映射图
 
@@ -32,6 +34,10 @@
 | 红绿灯 | 板子上固定的红绿灯，可以作实验                    | 红25绿24  | 红6绿5       |
 | 舵机   |                                                   |           |              |
 | 云台   |                                                   |           |              |
+
+### 软件配置
+参考[WiringPi/WiringPi: The arguably fastest GPIO Library for the Raspberry Pi](https://github.com/WiringPi/WiringPi)在树莓派上安装WiringPi
+
 
 ## 任务
 
