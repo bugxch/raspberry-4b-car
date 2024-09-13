@@ -1,0 +1,17 @@
+# the gpio pin list to create the project
+[gpio]
+BUZZER = "GPIO11"
+BUTTON = "GPIO19"
+GREEN_LED = "GPIO5"
+RED_LED = "GPIO6"
+# motor here
+PWML = "GPIO18"
+LIN1 = "GPIO22"
+LIN2 = "GPIO27"
+
+PWMR = "GPIO23"
+RIN1 = "GPIO25"
+RIN2 = "GPIO24"
+
+SENSOR_LEFT = "GPIO12"
+SENSOR_RIGH = "GPIO16"
