@@ -36,13 +36,17 @@
 | 云台   |                                                   |           |              |
 
 ### 软件配置
-参考[WiringPi/WiringPi: The arguably fastest GPIO Library for the Raspberry Pi](https://github.com/WiringPi/WiringPi)在树莓派上安装WiringPi
 
+参考[WiringPi/WiringPi: The arguably fastest GPIO Library for the Raspberry Pi](https://github.com/WiringPi/WiringPi)在树莓派上安装WiringPi
 
 ## 任务
 
 - [ ] 参考[Simple Guide to the Raspberry Pi GPIO Header - Raspberry Pi Spy](https://www.raspberrypi-spy.co.uk/2012/06/simple-guide-to-the-rpi-gpio-header-and-pins/)确认当前配置的每个部件在树莓派中GPIO的连接方式，填写上面的表格
 - [ ] 使用gpiozero和wiringpi改造如下程序
+
   - [X] buzzer
   - [X] button
-  - [ ] basic movement
+  - [X] basic movement
+  - [ ] infrad_avoid
+## 资料
+电机原理可以参考[树莓派 3 + L298N模块 驱动直流电机 - 简书](https://www.jianshu.com/p/775b4fb2c98d)，每个电机有3个引脚，两个引脚用来通电，第3只引脚通过PWM的方式控制电机转动的速度，已经封装在gpiozero的Motor类中。具体参考basic_move.py的内容。
