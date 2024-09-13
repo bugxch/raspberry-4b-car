@@ -9,97 +9,60 @@
 
 @author: bugxch
 """
-import RPi.GPIO as GPIO
+# import RPi.GPIO as GPIO
 import time
-from gpiozero import Button, LED
+from gpiozero import Motor
 
 
-PWMA = 18
-AIN1 = 22
-AIN2 = 27
-
-PWMB = 23
-BIN1 = 25
-BIN2 = 24
-
-
-def t_up(speed, t_time):
-    L_Motor.ChangeDutyCycle(speed)
-    GPIO.output(AIN2, False)  # AIN2
-    GPIO.output(AIN1, True)  # AIN1
-
-    R_Motor.ChangeDutyCycle(speed)
-    GPIO.output(BIN2, False)  # BIN2
-    GPIO.output(BIN1, True)  # BIN1
+def t_up(left_motor, right_motor, speed, t_time):
+    left_motor.forward(speed)
+    right_motor.forward(speed)
     time.sleep(t_time)
 
 
-def t_stop(t_time):
-    L_Motor.ChangeDutyCycle(0)
-    GPIO.output(AIN2, False)  # AIN2
-    GPIO.output(AIN1, False)  # AIN1
-
-    R_Motor.ChangeDutyCycle(0)
-    GPIO.output(BIN2, False)  # BIN2
-    GPIO.output(BIN1, False)  # BIN1
+def t_stop(left_motor, right_motor, t_time):
+    left_motor.stop()
+    right_motor.stop()
     time.sleep(t_time)
 
 
-def t_down(speed, t_time):
-    L_Motor.ChangeDutyCycle(speed)
-    GPIO.output(AIN2, True)  # AIN2
-    GPIO.output(AIN1, False)  # AIN1
-
-    R_Motor.ChangeDutyCycle(speed)
-    GPIO.output(BIN2, True)  # BIN2
-    GPIO.output(BIN1, False)  # BIN1
+def t_down(left_motor, right_motor, speed, t_time):
+    left_motor.backward(speed)
+    right_motor.backward(speed)
     time.sleep(t_time)
 
 
-def t_left(speed, t_time):
-    L_Motor.ChangeDutyCycle(speed)
-    GPIO.output(AIN2, True)  # AIN2
-    GPIO.output(AIN1, False)  # AIN1
-
-    R_Motor.ChangeDutyCycle(speed)
-    GPIO.output(BIN2, False)  # BIN2
-    GPIO.output(BIN1, True)  # BIN1
+def t_left(left_motor, right_motor, speed, t_time):
+    left_motor.stop()
+    right_motor.forward(speed)
     time.sleep(t_time)
 
 
-def t_right(speed, t_time):
-    L_Motor.ChangeDutyCycle(speed)
-    GPIO.output(AIN2, False)  # AIN2
-    GPIO.output(AIN1, True)  # AIN1
-
-    R_Motor.ChangeDutyCycle(speed)
-    GPIO.output(BIN2, True)  # BIN2
-    GPIO.output(BIN1, False)  # BIN1
+def t_right(left_motor, right_motor, speed, t_time):
+    left_motor.forward(speed)
+    right_motor.forward(speed)
     time.sleep(t_time)
 
 
-GPIO.setwarnings(False)
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(AIN2, GPIO.OUT)
-GPIO.setup(AIN1, GPIO.OUT)
-GPIO.setup(PWMA, GPIO.OUT)
+if __name__ == '__main__':
 
-GPIO.setup(BIN1, GPIO.OUT)
-GPIO.setup(BIN2, GPIO.OUT)
-GPIO.setup(PWMB, GPIO.OUT)
+    PWML = "GPIO18"
+    LIN1 = "GPIO22"
+    LIN2 = "GPIO27"
 
-L_Motor = GPIO.PWM(PWMA, 100)
-L_Motor.start(0)
+    PWMR = "GPIO23"
+    RIN1 = "GPIO25"
+    RIN2 = "GPIO24"
 
-R_Motor = GPIO.PWM(PWMB, 100)
-R_Motor.start(0)
+    motor_left = Motor(forward=LIN1, backward=LIN2, enable=PWML, pwm=True)
+    motor_right = Motor(forward=RIN1, backward=RIN2, enable=PWMR, pwm=True)
 
-try:
-    while True:
-        # t_up(50, 3)
-        # t_down(50, 3)
-        t_left(30, 3)
-        t_right(100, 3)
-        # t_stop(3)
-except KeyboardInterrupt:
-    GPIO.cleanup()
+    try:
+        while True:
+            t_up(motor_left, motor_right, 0.5, 3)
+            t_down(motor_left, motor_right, 0.5, 3)
+            t_left(motor_left, motor_right, 0.5, 3)
+            t_right(motor_left, motor_right, 0.5, 3)
+            t_stop(motor_left, motor_right, 3)
+    except KeyboardInterrupt:
+        print("exit")
