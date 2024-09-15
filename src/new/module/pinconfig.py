@@ -1,7 +1,7 @@
 import toml
 
 
-class CarConfig:
+class PinConfig:
 
     def __init__(self, file_name):
         self.config = toml.load(file_name)
@@ -37,8 +37,3 @@ class CarConfig:
 
     def right_sensor(self):
         return self.config['gpio']['GPIO16']
-
-
-if __name__ == '__main__':
-    config = CarConfig("config.toml")
-    print("button {}".format(config.button()))
