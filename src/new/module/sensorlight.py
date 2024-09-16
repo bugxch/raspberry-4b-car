@@ -2,6 +2,17 @@
 # -*- coding: utf-8 -*-
 
 from gpiozero import LightSensor
-class LightSensorControl(LightSensor):
-    def __init__(self, pin):
-        super().__init__(pin)
+from pinconfig import PinConfig
+class LeftLightSensor(LightSensor):
+    def __init__(self):
+        config = PinConfig("./config.toml")
+        super().__init__(config.left_sensor())
+
+class RightLightSensor(LightSensor):
+    def __init__(self):
+        config = PinConfig("./config.toml")
+        super().__init__(config.right_sensor())
+
+if __name__ == "__main__":
+    left_light_sensor = LeftLightSensor()
+    right_light_sensor = RightLightSensor()
