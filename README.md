@@ -8,7 +8,8 @@
 
 下面是树莓派的GPIO引脚映射图
 
-![](https://image-1258996033.cos.ap-shanghai.myqcloud.com/68747470733a2f2f7777772e72617370626572727970692d7370792e636f2e756b2f77702d636f6e74656e742f75706c6f6164732f323031322f30362f7261737062657272795f70695f335f6d6f64656c5f625f706c75735f6770696f2d3130323478313032342e6a7067?imageSlim)
+![raspberry-pi-4-pinout](https://github.com/user-attachments/assets/798aad4b-a748-4baa-9bdb-842ec755adac)
+
 
 参考这个图，确认不同部件的GPIO的引脚连线，需要注意参考[2. Basic Recipes — gpiozero 2.0.1 Documentation](https://gpiozero.readthedocs.io/en/latest/recipes.html#pin-numbering)，gpiozero使用BCM引脚（即板子上标识的GPIO xx引脚），下面的引脚指的是同一个
 
@@ -23,7 +24,8 @@
 
 下面是另一种包括wiringPi的管脚对应图
 
-![1726092983779](image/README/1726092983779.png)
+![树莓派管脚图](https://github.com/user-attachments/assets/baf6d3ca-05da-4887-8e2b-a3664e56e960)
+
 
 我的小车的引脚配置如下所示，
 
