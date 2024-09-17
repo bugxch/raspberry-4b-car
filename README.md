@@ -47,6 +47,9 @@
   - [X] buzzer
   - [X] button
   - [X] basic movement
-  - [ ] infrad_avoid
+  - [X] infrad_avoid
+  - [X] open cv follow hand
+
 ## 资料
+
 电机原理可以参考[树莓派 3 + L298N模块 驱动直流电机 - 简书](https://www.jianshu.com/p/775b4fb2c98d)，每个电机有3个引脚，两个引脚用来通电，第3只引脚通过PWM的方式控制电机转动的速度，已经封装在gpiozero的Motor类中。具体参考basic_move.py的内容。
