@@ -7,7 +7,7 @@ from gpiozero import Button
 class CarButton(Button):
     def __init__(self):
         config = PinConfig("config.toml")
-        self.button = Button(config.button(), pull_up=True)
+        super().__init__(config.button(), pull_up=True)
 
 
 if __name__ == '__main__':
