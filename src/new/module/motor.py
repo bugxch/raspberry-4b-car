@@ -10,13 +10,13 @@
 @author: bugxch
 """
 from gpiozero import Motor
-from pinconfig import PinConfig
+from .pinconfig import PinConfig
 import time
 
 
 class CarMotor:
     def __init__(self):
-        config = PinConfig("config.toml")
+        config = PinConfig()
         [PWML, LIN1, LIN2] = config.left_motor()
         [PWMR, RIN1, RIN2] = config.right_motor()
         self.motor_left = Motor(

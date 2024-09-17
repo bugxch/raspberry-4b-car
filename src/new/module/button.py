@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-from pinconfig import PinConfig
+from .pinconfig import PinConfig
 from gpiozero import Button
 
 
 class CarButton(Button):
     def __init__(self):
-        config = PinConfig("config.toml")
+        config = PinConfig()
         super().__init__(config.button(), pull_up=True)
 
 

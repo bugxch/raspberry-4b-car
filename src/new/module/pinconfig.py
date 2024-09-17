@@ -3,8 +3,9 @@ import toml
 
 class PinConfig:
 
-    def __init__(self, file_name):
-        self.config = toml.load(file_name)
+    def __init__(self):
+        self.config = toml.load(
+            r"/home/bugxch/Documents/raspberry-4b-car/src/new/module/config.toml")
 
     def buzzer(self):
         return self.config['gpio']['BUZZER']
