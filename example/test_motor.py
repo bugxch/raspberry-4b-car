@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 
-from module.motor import CarMotor  # type: ignore
+from ..  import module  # type: ignore
 
 
 motor = CarMotor()
