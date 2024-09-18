@@ -2,3 +2,5 @@ gpiozero
 numpy
 opencv-python
 adafruit-circuitpython-pca9685
+adafruit-circuitpython-servokit
+circuitpython-build-tools

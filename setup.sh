@@ -1,3 +1,3 @@
-python3 -m venv 4bcar
-source 4bcar/bin/activate
+python3 -m venv .venv
+source .venv/bin/activate
 pip3 install -r requirements.txt
