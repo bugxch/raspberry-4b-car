@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from gpiozero import LightSensor
-from pinconfig import PinConfig
+from .pinconfig import PinConfig
 
 
 class LeftLightSensor(LightSensor):

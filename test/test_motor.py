@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-
-from ..  import module  # type: ignore
-
+import context
+from module.motor import CarMotor
 
 motor = CarMotor()
 basic_speed = 0.4
