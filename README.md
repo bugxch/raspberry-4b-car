@@ -10,7 +10,6 @@
 
 ![raspberry-pi-4-pinout](https://github.com/user-attachments/assets/798aad4b-a748-4baa-9bdb-842ec755adac)
 
-
 参考这个图，确认不同部件的GPIO的引脚连线，需要注意参考[2. Basic Recipes — gpiozero 2.0.1 Documentation](https://gpiozero.readthedocs.io/en/latest/recipes.html#pin-numbering)，gpiozero使用BCM引脚（即板子上标识的GPIO xx引脚），下面的引脚指的是同一个
 
 ```python
@@ -25,7 +24,6 @@
 下面是另一种包括wiringPi的管脚对应图
 
 ![树莓派管脚图](https://github.com/user-attachments/assets/baf6d3ca-05da-4887-8e2b-a3664e56e960)
-
 
 我的小车的引脚配置如下所示，
 
@@ -50,8 +48,9 @@
   - [X] button
   - [X] basic movement
   - [X] infrad_avoid
-  - [X] open cv follow hand
+  - [ ] open cv follow hand
 
 ## 资料
 
-电机原理可以参考[树莓派 3 + L298N模块 驱动直流电机 - 简书](https://www.jianshu.com/p/775b4fb2c98d)，每个电机有3个引脚，两个引脚用来通电，第3只引脚通过PWM的方式控制电机转动的速度，已经封装在gpiozero的Motor类中。具体参考basic_move.py的内容。
+- 电机原理可以参考[树莓派 3 + L298N模块 驱动直流电机 - 简书](https://www.jianshu.com/p/775b4fb2c98d)，每个电机有3个引脚，两个引脚用来通电，第3只引脚通过PWM的方式控制电机转动的速度，已经封装在gpiozero的Motor类中。具体参考basic_move.py的内容
+- 基于[adafruit/Adafruit_CircuitPython_PCA9685: Adafruit CircuitPython driver for PCA9685 16-channel, 12-bit PWM LED  servo driver chip.](https://github.com/adafruit/Adafruit_CircuitPython_PCA9685)实现对云台的控制

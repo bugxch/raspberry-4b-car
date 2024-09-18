@@ -1,1 +1,4 @@
 gpiozero
+numpy
+opencv-python
+adafruit-circuitpython-pca9685
