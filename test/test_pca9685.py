@@ -1,5 +1,6 @@
-from adafruit_pca9685 import PCA9685
 import context
+from adafruit_pca9685 import PCA9685
+import board
 
 # SPDX-FileCopyrightText: 2021 ladyada for Adafruit Industries
 # SPDX-License-Identifier: MIT
@@ -8,15 +9,14 @@ import context
 # Connect an LED and resistor in series to the pin
 # to visualize duty cycle changes and its impact on brightness.
 
-import board
-print(dir(board))
 
 # Create the I2C bus interface.
 i2c = board.I2C()  # uses board.SCL and board.SDA
-# i2c = busio.I2C(board.GP1, board.GP0)    # Pi Pico RP2040
 
 # Create a simple PCA9685 class instance.
 pca = PCA9685(i2c)
+# print(dir(i2c))
+# print(dir(pca))
 
 # Set the PWM frequency to 60hz.
 pca.frequency = 60

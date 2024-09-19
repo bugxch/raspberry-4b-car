@@ -1,6 +1,9 @@
 gpiozero
 numpy
 opencv-python
+Adafruit-Blinka
+circuitpython-build-tools
+adafruit-circuitpython-busdevice
 adafruit-circuitpython-pca9685
 adafruit-circuitpython-servokit
-circuitpython-build-tools
+adafruit-circuitpython-register
