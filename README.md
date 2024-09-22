@@ -54,4 +54,4 @@
 
 - 电机原理可以参考[树莓派 3 + L298N模块 驱动直流电机 - 简书](https://www.jianshu.com/p/775b4fb2c98d)，每个电机有3个引脚，两个引脚用来通电，第3只引脚通过PWM的方式控制电机转动的速度，已经封装在gpiozero的Motor类中。具体参考basic_move.py的内容
 - 基于[adafruit/Adafruit_CircuitPython_PCA9685: Adafruit CircuitPython driver for PCA9685 16-channel, 12-bit PWM LED  servo driver chip.](https://github.com/adafruit/Adafruit_CircuitPython_PCA9685)实现对PCA9685的控制
-- 基于[adafruit/Adafruit\_CircuitPython\_ServoKit: CircuitPython helper library for the PWM/Servo FeatherWing, Shield and Pi HAT kits.](https://github.com/adafruit/Adafruit_CircuitPython_ServoKit)实现对云台的控制
+- 基于[adafruit/Adafruit\_CircuitPython\_ServoKit: CircuitPython helper library for the PWM/Servo FeatherWing, Shield and Pi HAT kits.](https://github.com/adafruit/Adafruit_CircuitPython_ServoKit)和[Python &amp; CircuitPython | Adafruit PCA9685 16-Channel Servo Driver | Adafruit Learning System](https://learn.adafruit.com/16-channel-pwm-servo-driver/python-circuitpython)实现对云台的控制

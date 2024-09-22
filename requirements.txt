@@ -7,3 +7,5 @@ adafruit-circuitpython-busdevice
 adafruit-circuitpython-pca9685
 adafruit-circuitpython-servokit
 adafruit-circuitpython-register
+adafruit-circuitpython-motor
+toml
